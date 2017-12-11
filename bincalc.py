@@ -22,7 +22,10 @@ try:
     res = 0.0
     for i in range(x):
         res += binom.pmf(i, n, 0.5)
-    print 2*res
+    if 2*x == n+2:  # do not count middle value twice
+        print 2 * res - binom.pmf(x-1, n, 0.5)
+    else:
+        print 2 * res
 except ValueError:
     print "Arguments are not integers"
 except IndexError:
