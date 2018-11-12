@@ -47,5 +47,5 @@ for pair in two_nucl:
         float(one_nucl[nucls[1]])/total_nucls/total_nucls
     res.append((pair[0], freq/expected_freq))
 
-print("The mostair: {}; Real over expected occurance: {}".format(
+print("The most deviating: {}; Real over expected occurance: {}".format(
     *sorted(res, key=lambda x: max(x[1], 1/x[1]))[-1]))
